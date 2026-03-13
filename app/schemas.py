@@ -11,7 +11,7 @@ class GradeRecord(BaseModel):
     @field_validator("group_name", "student_name")
     def validate_name(cls, v):
         if not v.strip():
-            raise ValueError("Имя студента должно быть непустым")
+            raise ValueError("Имя студента и название группы должны быть непустыми")
         return v.strip()
 
 
